@@ -1,0 +1,17 @@
+encoding "utf8";
+TTextMinerConfig {
+  Dictionary = "./dicts/main.gzt";
+  Input = {
+    Encoding = "utf8";
+  }
+  Output = {
+    Format = xml;
+    SaveLeads = 0;
+  }
+  Articles = [
+    { Name = "street" }
+  ]
+  Facts = [
+    { Name = "StreetFact" }
+  ]
+}

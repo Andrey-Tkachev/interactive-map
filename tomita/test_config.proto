@@ -1,0 +1,19 @@
+encoding "utf8";
+TTextMinerConfig {
+  Dictionary = "./dicts/main.gzt";
+  PrettyOutput = "PrettyOutput.html";  
+  Input = {
+    File = "../test_news/n1.txt";
+    Encoding = "utf8";
+  }
+  Output = {
+    File = "facts.proto";
+    Format = proto;
+  }
+  Articles = [
+    { Name = "street" }
+  ]
+  Facts = [
+    { Name = "StreetFact" }
+  ]
+}

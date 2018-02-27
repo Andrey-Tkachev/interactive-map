@@ -1,0 +1,14 @@
+import "base.proto";
+import "facttypes_base.proto";
+
+message AdressFact: NFactType.TFact
+{
+    required string Name = 1;
+    extensions 2 to 4;
+};
+
+message StreetFact: AdressFact
+{
+    required string Descr = 2;
+    optional string HouseNum = 3;
+};

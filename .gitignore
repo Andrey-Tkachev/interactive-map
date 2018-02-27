@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+*/__pycache__/*
+*.py[cod]
+*$py.class
+
+# tomita
+tomita/bin/*
+tomita/*.bin
+# IDE
+.vscode/*
+
+
+
