@@ -17,7 +17,7 @@ NameAdj -> Adj<h-reg1> Adj*;
 NameAdj -> NumberW<gnc-agr[1]> Adj<gnc-agr[1]>;
 
 NumberS -> 'номер' | '№';
-House -> HouseW (NumberS) AnyWord<wff=/[1-9]?[0-9]/> interp (StreetFact.HouseNum    );
+House -> HouseW (NumberS) AnyWord<wff=/[1-9]?[0-9]/> interp (StreetFact.HouseNum);
 
 Street -> (House) ('по') StreetDescr interp (StreetFact.Descr) NameNoun<gram="род", h-reg1> interp (StreetFact.Name::not_norm);
 Street -> (House) StreetDescr interp (StreetFact.Descr) NameNoun<gram="им", h-reg1> interp (StreetFact.Name::not_norm);

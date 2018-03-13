@@ -6,9 +6,9 @@
 
 Убедиться, что в системе установлена и запущена `mongodb`.
 
-Скачать исполняемый файл [tomita](https://tech.yandex.ru/tomita/) для вашей системы.
+Скачать исполняемый файл [tomita](https://tech.yandex.ru/tomita/) для вашей системы и положить его в папку tomita (например в tomita/bin).
 
-В файле global_settings указать путь к исполняемому файлу томиы относительно корня проекта.
+В файле global_settings указать путь к исполняемому файлу томиы относительно папки tomita.
 
 ```
 pip3 install scrapy pymongo

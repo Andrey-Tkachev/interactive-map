@@ -6,6 +6,7 @@
 # tomita
 tomita/bin/*
 tomita/*.bin
+tomita/*.gzt
 # IDE
 .vscode/*
 
