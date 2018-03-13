@@ -10,7 +10,7 @@ class MongoPipeline(object):
 
     @classmethod
     def from_crawler(cls, crawler):
-        self.collection_name = crawler.settings.get('MONGO_RNEWS_COLLECTION')
+        cls.collection_name = crawler.settings.get('MONGO_RNEWS_COLLECTION')
         return cls(
             mongo_uri=crawler.settings.get('MONGO_URI'),
             mongo_db=crawler.settings.get('MONGO_DATABASE', 'news')
@@ -24,5 +24,5 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(item)
+        self.db[self.collection_name].insert_one(dict(item))
         return item

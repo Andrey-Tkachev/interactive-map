@@ -14,8 +14,8 @@ MONGO_DB = 'news'
 MONGO_RNEWS_COLLECTION = 'raw'
 BOT_NAME = 'newscrawling'
 LOG_LEVEL = 'WARNING'
-SPIDER_MODULES = ['newscrawling.spiders']
-NEWSPIDER_MODULE = 'newscrawling.spiders'
+SPIDER_MODULES = ['datacrawling.newscrawling.spiders']
+NEWSPIDER_MODULE = 'datacrawling.newscrawling.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -68,7 +68,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'newscrawling.pipelines.MongoPipeline': 300,
+    'datacrawling.newscrawling.pipelines.MongoPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

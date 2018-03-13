@@ -2,7 +2,7 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from newscrawling.items import NewscrawlingItem 
+from datacrawling.newscrawling.items import NewscrawlingItem 
 
 class TassSpider(CrawlSpider):
     name = 'tass'
@@ -19,7 +19,6 @@ class TassSpider(CrawlSpider):
         item['url'] = response.url
         item['raw_text'] = ''.join(response.xpath('//div[contains(@class, "b-material-text__l js-mediator-article")]/p/text()')
                                            .extract())
-        item['date'] = response.xpath('//span[contains(@class, "b-material__date")]/text()')
-                               .extract_first()
+        item['date'] = response.xpath('//span[contains(@class, "b-material__date")]/text()').extract_first()
 
         return item

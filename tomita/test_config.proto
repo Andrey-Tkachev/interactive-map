@@ -11,9 +11,11 @@ TTextMinerConfig {
     Format = proto;
   }
   Articles = [
-    { Name = "street" }
+    { Name = "street" },
+    { Name = "organization" }
   ]
   Facts = [
-    { Name = "StreetFact" }
+    { Name = "StreetFact" },
+    { Name = "OrgFact" }
   ]
 }

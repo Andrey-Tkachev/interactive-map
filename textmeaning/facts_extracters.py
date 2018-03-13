@@ -14,11 +14,14 @@ class TomitaExtracter(object):
     def extract(self, raw_text="", fact_types=[]):
         cmpl_proc = subprocess.run([self.bin, self.cfg], input=raw_text,
                                 stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE,
+                                stderr=subprocess.PIPE,                                
                                 shell=False,
                                 cwd=self.env,
                                 encoding='utf8')
-        dict_data = xmltodict.parse(cmpl_proc.stdout)['fdo_objects']['document']['facts']
+        parsed_res = xmltodict.parse(cmpl_proc.stdout)
+        if not parsed_res['fdo_objects']:
+            return []
+        dict_data = parsed_res['fdo_objects']['document']['facts']
         ftypes_dict = {}
         for f_type in fact_types:
             if f_type.__name__ not in dict_data:
@@ -26,7 +29,7 @@ class TomitaExtracter(object):
     
             suitable_facts = dict_data[f_type.__name__]
             if type(suitable_facts) is not list:
-                suitable_facts = list(suitable_facts)
+                suitable_facts = [suitable_facts]
             res = []
             for xml_fact in suitable_facts:
                 fact = f_type()

@@ -9,3 +9,8 @@ TAuxDicArticle street
 {
     key = { "tomita:../grammars/street.cxx" type=CUSTOM }
 }
+
+TAuxDicArticle organization
+{
+    key = { "tomita:../grammars/organization.cxx" type=CUSTOM }
+}
