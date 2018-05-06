@@ -3,12 +3,31 @@
 *.py[cod]
 *$py.class
 
-# tomita
+# Tomita
 tomita/bin/*
-tomita/*.bin
-tomita/*.gzt
+tomita/*/*.bin
+*.gzt
+
 # IDE
 .vscode/*
 
+# C extensions
+*.so
 
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+__pycache__
 
+# Vagrant files
+.vagrant

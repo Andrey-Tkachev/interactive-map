@@ -14,5 +14,11 @@ class AdressFact(scrapy.Item):
 class StreetFact(AdressFact):
     Descr = scrapy.Field()
 
+    def pretty_print(self):
+        return str(self['Descr']) + " " + self['Name']
+
 class OrgFact(AdressFact):
     Descr = scrapy.Field()
+
+    def pretty_print(self):
+        return str(self['Descr']) + " " + self['Name']
