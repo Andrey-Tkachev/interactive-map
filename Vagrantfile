@@ -119,4 +119,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
 
   config.vm.provision :shell, :path => "vagrant_conf/setup.sh"
+  config.vm.provision :shell, :path => "vagrant_conf/setup_pyenv.sh", privileged: false
+  
 end

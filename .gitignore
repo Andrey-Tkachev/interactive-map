@@ -4,8 +4,8 @@
 *$py.class
 
 # Tomita
-tomita/bin/*
-tomita/*/*.bin
+tomita_env/bin/*
+tomita_env/*/*.bin
 *.gzt
 
 # IDE
@@ -13,6 +13,9 @@ tomita/*/*.bin
 
 # C extensions
 *.so
+
+# Static
+static_storage
 
 # Packages
 *.egg
@@ -31,3 +34,6 @@ __pycache__
 
 # Vagrant files
 .vagrant
+
+# DBs
+*.sqlite3

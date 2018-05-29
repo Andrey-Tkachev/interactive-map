@@ -1,4 +1,7 @@
-MONGO_URI = '127.0.0.1:27017'
-MONGO_DB = 'news'
-MONGO_RNEWS_COLLECTION = 'raw'
+import os
+
 TOMITA_BIN = './bin/tomita-linux64'
+MONGO_URI = os.environ.get('MONGO_URI')
+
+MONGO_SCRAPY_DB = os.environ.get('MONGO_SCRAPY_DB')
+MONGO_CRAWLED_COLLECTION = os.environ.get('MONGO_CRAWLED_COLLECTION')

@@ -10,10 +10,10 @@ class MongoPipeline(object):
 
     @classmethod
     def from_crawler(cls, crawler):
-        cls.collection_name = crawler.settings.get('MONGO_RNEWS_COLLECTION')
+        cls.collection_name = crawler.settings.get('MONGO_CRAWLED_COLLECTION')
         return cls(
             mongo_uri=crawler.settings.get('MONGO_URI'),
-            mongo_db=crawler.settings.get('MONGO_DATABASE', 'news')
+            mongo_db=crawler.settings.get('MONGO_DB'),
         )
 
     def open_spider(self, spider):
@@ -24,5 +24,10 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(dict(item))
+        self.db[self.collection_name].update_one({
+            'url' : item['url'],
+        }, {
+            '$set': dict(item),
+        }, upsert=True)
+
         return item

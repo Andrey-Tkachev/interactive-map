@@ -1,0 +1,1 @@
+from scrapy_app.easy_crawl import crawl_spider

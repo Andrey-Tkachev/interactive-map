@@ -23,7 +23,7 @@ class TomitaExtracter(object):
         if not parsed_res['fdo_objects']:
             return []
         dict_data = parsed_res['fdo_objects']['document']['facts']
-        facts_by_type = {}
+        result_facts = []
 
         for facttype in facttypes_to_extract:
             if facttype.__name__ not in dict_data:
@@ -38,5 +38,5 @@ class TomitaExtracter(object):
                 fact.from_dict(xml_fact, field_key='@val')
                 facts_of_curr_type.append(fact)
 
-            facts_by_type[facttype.__name__] = facts_of_curr_type
-        return facts_by_type
+            result_facts.extend(facts_of_curr_type)
+        return result_facts
