@@ -10,7 +10,7 @@
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 import os
-import global_settings
+import settings as global_settings
 
 MONGO_URI = global_settings.MONGO_URI
 MONGO_DB = global_settings.MONGO_SCRAPY_DB

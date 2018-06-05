@@ -10,7 +10,7 @@ from interactive_map.map_app.models import ParsedNews, NewsEvent
 import pymongo
 import scrapy
 
-import global_settings
+import settings as global_settings
 from textmeaning import facttypes as ft
 from textmeaning import TomitaExtracter
 
@@ -41,7 +41,7 @@ class Command(BaseCommand):
         collection = db[global_settings.MONGO_CRAWLED_COLLECTION]
 
         places = []
-        te = TomitaExtracter(tomita_env='./tomita_env', tomita_bin=global_settings.TOMITA_BIN)
+        te = TomitaExtracter(tomita_env='./tomita', tomita_bin=global_settings.TOMITA_BIN)
         news = collection.find({})
         self.stdout.write(global_settings.MONGO_CRAWLED_COLLECTION)
 

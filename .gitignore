@@ -4,8 +4,8 @@
 *$py.class
 
 # Tomita
-tomita_env/bin/*
-tomita_env/*/*.bin
+tomita/bin/*
+tomita/*/*.bin
 *.gzt
 
 # IDE
@@ -35,5 +35,5 @@ __pycache__
 # Vagrant files
 .vagrant
 
-# DBs
-*.sqlite3
+# DevEnv
+dev_env

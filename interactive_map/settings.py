@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'interactive_map.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'dev_env', 'db.sqlite3'),
     }
 }
 
@@ -126,4 +126,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'interactive_map', 'frontend_app', 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_storage')
+STATIC_ROOT = os.path.join(BASE_DIR, 'dev_env', 'static_storage')

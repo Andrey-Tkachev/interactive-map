@@ -16,6 +16,6 @@ pyenv install 3.6.0
 pyenv virtualenv 3.6.0 general
 pyenv global general
 
-pip install django djongo \
-            pymongo \
+pip install django djangorestframework \
+            pymongo requests\
             scrapy xmltodict

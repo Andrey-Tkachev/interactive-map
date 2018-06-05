@@ -120,5 +120,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => "vagrant_conf/setup.sh"
   config.vm.provision :shell, :path => "vagrant_conf/setup_pyenv.sh", privileged: false
-  
+  # config.vm.provision :shell, :path => "vagrant_conf/populate_db.sh", privileged: false
+  config.vm.provision :shell, :path => "vagrant_conf/run.sh", privileged: false
+
+
 end

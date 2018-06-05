@@ -1,5 +1,6 @@
-from scrapy_app import crawl_spider
 from django.core.management.base import BaseCommand, CommandError
+
+from scrapy_app import crawl_spider
 
 
 class Command(BaseCommand):
