@@ -1,5 +1,10 @@
 # Interactive Map
 ## Что это?
+
+
+![скриншот не найден](screenshots/sc1.png "Main page")
+
+Перед вами карта событий Москвы.
 Подобное описание смотри на [вики](https://github.com/Andrey-Tkachev/interactive-map/wiki) проекта.
 
 ## Как развернуть окружение разработчика?
